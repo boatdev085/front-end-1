@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Route, Redirect, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Header from './common/Header/index'
 import MenuBottom from './common/MenuBottom/index'
 import PageHome from './components/pageHome/index'
@@ -12,20 +12,22 @@ const Container = styled.div`
   padding: 0;
   width: 100%;
   height: 100vh;
+  background-color: white;
+
+  /* background-color: #f1f1f1; */
 `
-const App = () => {
+const App = props => {
   return (
-    <Container>
-      <Header />
-      <Switch>
+    <Switch>
+      <Container>
+        <Header />
         <Route path="/ranking" component={PageRanking} />
         <Route path="/library" component={PageLibrary} />
         <Route path="/error" component={PageError} />
         <Route path="/" exact component={PageHome} />
-        <Redirect path="/home" to="/" />
-      </Switch>
-      <MenuBottom />
-    </Container>
+        <MenuBottom {...props} />
+      </Container>
+    </Switch>
   )
 }
 

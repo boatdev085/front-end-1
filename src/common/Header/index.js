@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 const Container = styled.div`
-  background-color: gray;
+  background-color: #2e2e30;
+  color: white;
   width: 100%;
   display: flex;
   flex-direction: row;
