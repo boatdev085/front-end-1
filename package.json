@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-image-gallery": "^0.8.17",
+    "react-items-carousel": "^2.3.6",
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
