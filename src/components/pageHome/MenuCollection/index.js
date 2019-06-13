@@ -8,6 +8,7 @@ import Popular from '../../../assets/icon/sc_icon_rg.png'
 
 const Container = styled.div`
   background-color: #f8f8f8;
+  box-shadow: 0 1px 1px 1px rgba(157, 157, 157, 0.1);
   width: 100%;
   display: flex;
   flex-direction: row;

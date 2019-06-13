@@ -6,6 +6,7 @@ const BoxMenu = styled.div`
   justify-content: center;
   text-align: center;
   background-color: #f8f8f8;
+  box-shadow: 0 1px 1px 1px rgba(157, 157, 157, 0.1);
   width: 100%;
 `
 const MenuName = styled.div`
