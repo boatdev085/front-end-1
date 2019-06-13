@@ -7,7 +7,7 @@ import Completed from '../../../assets/icon/sc_icon_wj.png'
 import Popular from '../../../assets/icon/sc_icon_rg.png'
 
 const Container = styled.div`
-  background-color: #f4f4f4;
+  background-color: #f8f8f8;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -16,16 +16,16 @@ const Container = styled.div`
   color: gray;
   text-align: center;
   justify-content: center;
-  margin-bottom: 0.5rem;
 `
 const BoxMenu = styled.div`
   flex: 1;
   img {
-    width: 50%;
+    width: 45%;
+    height: 60%;
   }
   div {
     position: relative;
-    bottom: 0;
+    font-size: 0.8rem;
   }
 `
 const arrMenu = [

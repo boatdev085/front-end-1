@@ -5,7 +5,7 @@ const BoxMenu = styled.div`
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: #f8f8f8;
   width: 100%;
 `
 const MenuName = styled.div`

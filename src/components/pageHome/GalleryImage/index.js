@@ -11,14 +11,19 @@ const GalleryImage = () => {
     })
   }
   useEffect(() => {
-    axios.get(process.env.REACT_APP_BANNER).then(res => {
-      const { data } = res
-      if (data.data || data.data.length > 0) {
-        setImage(data.data)
-      } else {
+    axios
+      .get(process.env.REACT_APP_BANNER)
+      .then(res => {
+        const { data } = res
+        if (data.data || data.data.length > 0) {
+          setImage(data.data)
+        } else {
+          setImage([])
+        }
+      })
+      .catch(e => {
         setImage([])
-      }
-    })
+      })
   }, [])
   return (
     <ImageGallery
