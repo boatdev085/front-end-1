@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import CollectionRecommended from './ConllectionRecommended'
-import ConllectionCompleted from './ConllectionCompleted'
+import CollectionRecommended from './CollectionRecommended'
+import CollectionCompleted from './CollectionCompleted'
+import CollectionTop from './CollectionTop'
 const Container = styled.div`
   background-color: #f8f8f8;
   box-shadow: 0 1px 1px 1px rgba(157, 157, 157, 0.1);
@@ -31,8 +32,10 @@ const selectComponents = item => {
   switch (Category) {
     case 'Recommended':
       return <CollectionRecommended item={item} />
+    case 'Top':
+      return <CollectionTop item={item} />
     case 'Completed':
-      return <ConllectionCompleted item={item} />
+      return <CollectionCompleted item={item} />
     default:
       return null
   }

@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
+const Container = styled.div`
+  margin: 0;
+`
 const BoxImage = styled.div`
   padding: 1rem 0 0 0;
   width: 100%;
@@ -15,7 +18,7 @@ const BoxImage = styled.div`
   p {
     padding: 0;
     margin: 0;
-    color: gray;
+    color: black;
   }
 `
 const StyleAliceCarousel = styled(AliceCarousel)`
@@ -31,26 +34,28 @@ const CollectionRecommended = props => {
     return null
   }
   return (
-    <StyleAliceCarousel
-      items={Books.map((item, idx) => {
-        const { Img, Name } = item
-        return (
-          <BoxImage key={idx}>
-            <div>
-              <img src={process.env.REACT_APP_BOOK_IMAGE + Img} alt="books" />
-            </div>
-            <p>{Name}</p>
-          </BoxImage>
-        )
-      })}
-      responsive={responsive}
-      autoPlayDirection="ltr"
-      // autoPlay={true}
-      fadeOutAnimation={true}
-      mouseDragEnabled={true}
-      buttonsDisabled={true}
-      dotsDisabled={true}
-    />
+    <Container>
+      <StyleAliceCarousel
+        items={Books.map((item, idx) => {
+          const { Img, Name } = item
+          return (
+            <BoxImage key={idx}>
+              <div>
+                <img src={process.env.REACT_APP_BOOK_IMAGE + Img} alt="books" />
+              </div>
+              <p>{Name}</p>
+            </BoxImage>
+          )
+        })}
+        responsive={responsive}
+        autoPlayInterval={2000}
+        autoPlayDirection="ltr"
+        autoPlay={true}
+        fadeOutAnimation={true}
+        mouseDragEnabled={true}
+        buttonsDisabled={true}
+      />
+    </Container>
   )
 }
 

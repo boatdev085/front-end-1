@@ -15,10 +15,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && firebase deploy --only hosting"
+    "build": "sh -ac '. .env.${REACT_APP_ENV}; react-scripts build'",
+    "build:production": "REACT_APP_ENV=prod npm run build",
+    "deploy": "yarn build:production && firebase deploy --only hosting"
   },
   "proxy": "https://api.webnovelsapp.com/v5/base",
   "eslintConfig": {

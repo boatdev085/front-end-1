@@ -14,7 +14,7 @@ const CollectionBox = () => {
   const [useData, setData] = useState([])
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_COLLECTION)
+      .get(process.env.REACT_APP_API + process.env.REACT_APP_COLLECTION)
       .then(res => {
         const { data } = res
         if (data.data || data.data.length > 0) {

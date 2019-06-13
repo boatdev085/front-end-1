@@ -12,7 +12,7 @@ const GalleryImage = () => {
   }
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_BANNER)
+      .get(process.env.REACT_APP_API + process.env.REACT_APP_BANNER)
       .then(res => {
         const { data } = res
         if (data.data || data.data.length > 0) {
