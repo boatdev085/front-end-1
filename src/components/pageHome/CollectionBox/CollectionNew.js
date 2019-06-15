@@ -79,9 +79,28 @@ const AuthorBoxHead = styled.div`
     margin-left: 0.5rem;
   }
 `
-const CollectionTop = props => {
+const BoxStyleMovie = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+`
+const ItemStyleMovie = styled.div`
+  flex: 1;
+  text-align: center;
+  border: 1px solid ${({ color }) => color};
+  background-color: ${({ color }) => color};
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
+  margin: 0 0.5rem;
+  border-radius: 20px;
+  color: white;
+`
+const CollectionNew = props => {
   const { item } = props
-  const { Books } = item
+  const { Books, genre } = item
+  const { Categories } = genre
+  console.log('item', Categories)
+
   if (!item || item.length === 0) {
     return null
   }
@@ -89,7 +108,7 @@ const CollectionTop = props => {
     <Container>
       {Books.map((item, idx) => {
         const { Img, Name, Author, Desc, CName } = item
-        if (idx === 0) {
+        if (idx === 0 || idx === 1) {
           return (
             <CollectionTopHead key={idx}>
               <BoxImageHead>
@@ -111,7 +130,7 @@ const CollectionTop = props => {
       <BoxContainerSecond>
         {Books.map((item, idx) => {
           const { Img, Name, Author } = item
-          if (idx === 0) {
+          if (idx === 0 || idx === 1) {
             return null
           }
           return (
@@ -125,8 +144,28 @@ const CollectionTop = props => {
           )
         })}
       </BoxContainerSecond>
+      {Categories && Categories.length > 0 ? (
+        <BoxStyleMovie>
+          {Categories.map(item => {
+            const { CategoryName } = item
+            let colorBox = '#5090be'
+            if (CategoryName === 'Fantasy') {
+              colorBox = '#00cccb'
+            } else if (CategoryName === 'Xianxia') {
+              colorBox = '#ff9934'
+            } else if (CategoryName === 'Romantic') {
+              colorBox = '#989933'
+            }
+            return (
+              <ItemStyleMovie color={colorBox} key={CategoryName}>
+                {CategoryName}
+              </ItemStyleMovie>
+            )
+          })}
+        </BoxStyleMovie>
+      ) : null}
     </Container>
   )
 }
 
-export default CollectionTop
+export default CollectionNew

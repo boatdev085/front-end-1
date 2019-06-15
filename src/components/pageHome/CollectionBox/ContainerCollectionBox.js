@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import CollectionRecommended from './CollectionRecommended'
 import CollectionCompleted from './CollectionCompleted'
 import CollectionTop from './CollectionTop'
+import CollectionNew from './CollectionNew'
 const Container = styled.div`
   background-color: #f8f8f8;
   box-shadow: 0 1px 1px 1px rgba(157, 157, 157, 0.1);
@@ -34,6 +35,8 @@ const selectComponents = item => {
       return <CollectionRecommended item={item} />
     case 'Top':
       return <CollectionTop item={item} />
+    case 'New':
+      return <CollectionNew item={item} />
     case 'Completed':
       return <CollectionCompleted item={item} />
     default:
