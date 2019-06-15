@@ -30,6 +30,9 @@ const BoxMenu = styled.div`
   flex: 1;
   img {
     width: 30%;
+    @media (min-width: 768px) {
+      width: 10%;
+    }
   }
   div {
     position: relative;

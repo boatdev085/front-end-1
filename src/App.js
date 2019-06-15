@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Route, Switch } from 'react-router-dom'
-import Header from './common/Header/index'
 import MenuBottom from './common/MenuBottom/index'
 import PageHome from './components/pageHome/index'
 import PageLibrary from './components/pageLibary/index'
@@ -18,7 +17,6 @@ const App = props => {
   return (
     <Switch>
       <Container>
-        <Header />
         <Route path="/ranking" component={PageRanking} />
         <Route path="/library" component={PageLibrary} />
         <Route path="/error" component={PageError} />

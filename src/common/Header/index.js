@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 const Container = styled.div`
+  position: relative;
   background-color: #2e2e30;
   color: white;
   width: 100%;
   display: flex;
   flex-direction: row;
+  padding: 1rem 0;
 `
 const MenuLeft = styled.div`
   color: white;
@@ -23,39 +25,54 @@ const StyleSelect = styled.div`
     border: 1px solid transparent;
     border-radius: 4px;
     background: transparent;
-    font-size: 0.5rem;
-  }
-  span {
-    width: 20%;
-    height: 50%;
-    position: absolute;
-    display: inline-block;
-    top: 6px;
-    right: 3px;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAACTk5P7+/v5+fldXV1iYmJTU1NsbGxGRkZ0dHQ+Pj6FhYWJiYkuLi5xcXFLS0t7e3s2NjZQUFB6eno/Pz+BgYGpqalgYGAzMzMpKSkYGBhHR0fy8vIlJSXDw8OQwmjUAAACvElEQVR4nO3ViVbiQBBG4RqMK4qKK6gz7/+WQ3A4CiYhS3fXMvc+QX3n74AIERERERERERERERERERERERERERERERER7fUyi92LfLz9itzbh0j1W/uKjK2r+p1WC+07srWoPj/Faq19SabW1e7XJuiKi+rrBzXkiuvq+3/GSbwVFyf7f4vhHuqikoOCrXi44HbFlfZVCVv9WDDYik0LbolL7csStWwBbogxHuqqFRhkxfYFg6zYteA278TlEZ/7h9r9RP/lmXh8we2Kc+07Rzfvs6DnFfst6HjFp97ATR6J8yFAj8SBQH/EwUBvxBFAkSftqwc06EfG44qjFvS04sgF/RAnAEUuta/v0eUUoAfiRKB94mSg9W9x0je4y/KKCRase9d2tHaXBmh3xUQL1t1pWxpLtmCdxYf6nhJoccWkC1okJgeKPGib9npID7S1YoYFbREzAe081CxP1BIxI1DkXFu36Twn0MKKWRes014x84L6xAJAXWIRoCaxEFCPWAyoRSwIFDlVAJ6WBGoQCwPLE4sDSxMVgGWJKkCRs2LAMx2gyGsh4KsWsNSKaguWIqoCSxCVgSIXmYEX2sDcK6ovWJdzRQML1uVb0cSCdblWNLJgXR6iIWAeoilgDqIxYHqiOaDIbVLgrTanqZREk8CURKPAdESzwFTEK21GV1fRgSmIxoHTieaBU4kOgCKPE4CP2sf3azzRCXA80Q1wLNERcBzRFVDkfjDwXvvkoQ0lugMOJToEDiO6BIo89wY+a586tr5Et8C+RMfAfkTXwD5E58DjRPdAketO4LX2eSnqIoYAdhGDANuJYYAiN43AG+2zUtZEDAVsIgYD/iSGAx4SAwL3iSGB34lBgV/EsMAdMTDwkzjTPiJvs+hAkT/aBxAREREREREREREREREREREREREREREREf3v/QWzfD8ftAVJFwAAAABJRU5ErkJggg==)
-      right / 90% no-repeat #fff;
-    pointer-events: none;
+    font-size: 0.7rem;
+    margin: 0.5rem 0.2rem 0.2rem 1rem;
   }
   i {
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-
     border-top: 5px solid white;
     position: absolute;
     display: inline-block;
-    top: 10px;
+    top: 15px;
     right: 3px;
   }
 `
 const MenuCenter = styled.div`
+  position: relative;
   color: white;
   flex: 0.8;
+`
+const InputText = styled.input`
+  text-indent: 15px;
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 0.3rem 0 0.3rem 1rem;
+  font-size: 1rem;
+  margin-left: 10px;
+`
+const SearchIcon = styled.div`
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 5px;
+  top: -5px;
+  img {
+    width: 60%;
+  }
 `
 const MenuRight = styled.div`
   color: white;
   flex: 0.2;
+`
+const BoxGenre = styled.div`
+  margin-top: 0.5rem;
 `
 const Header = () => {
   return (
@@ -70,9 +87,17 @@ const Header = () => {
         </StyleSelect>
       </MenuLeft>
       <MenuCenter>
-        <input type="text" />
+        <InputText type="search" placeholder="Search" />
+        <SearchIcon>
+          <img
+            src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
+            alt="search"
+          />
+        </SearchIcon>
       </MenuCenter>
-      <MenuRight>Genre</MenuRight>
+      <MenuRight>
+        <BoxGenre>Genre</BoxGenre>
+      </MenuRight>
     </Container>
   )
 }
