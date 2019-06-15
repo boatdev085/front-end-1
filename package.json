@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "build": "sh -ac '. .env.${REACT_APP_ENV}; react-scripts build'",
     "build:production": "REACT_APP_ENV=prod npm run build",
-    "deploy": "yarn build:production && firebase deploy --only hosting"
+    "deploy": "yarn build:production && firebase deploy --only hosting",
+    "deploy:backend": "cd functions && yarn deploy"
   },
   "proxy": "https://api.webnovelsapp.com/v5/base",
   "eslintConfig": {
