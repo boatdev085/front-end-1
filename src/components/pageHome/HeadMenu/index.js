@@ -10,14 +10,24 @@ const BoxMenu = styled.div`
   width: 100%;
 `
 const MenuName = styled.div`
+  position: relative;
   flex: 1;
   padding: 0.7rem;
-  ${({ active }) => (active ? `border-bottom: 1px solid gray` : '')};
+`
+const HrMenuName = styled.hr`
+  border: 0;
+  height: 2px;
+  width: 80%;
+  background-color: #2e2e30;
+  position: absolute;
 `
 const HeaderMenu = () => {
   return (
     <BoxMenu>
-      <MenuName active={true}>Featured</MenuName>
+      <MenuName>
+        Featured
+        <HrMenuName active={true} />
+      </MenuName>
       <MenuName>Top</MenuName>
       <MenuName>Topic</MenuName>
     </BoxMenu>
