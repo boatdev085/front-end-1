@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
+import Constants from '../../../constants/index'
+
 const Container = styled.div`
   margin: 0;
 `
@@ -41,7 +43,7 @@ const CollectionRecommended = props => {
           return (
             <BoxImage key={idx}>
               <div>
-                <img src={process.env.REACT_APP_BOOK_IMAGE + Img} alt="books" />
+                <img src={Constants.PATH_IMAGE + Img} alt="books" />
               </div>
               <p>{Name}</p>
             </BoxImage>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Constants from '../../../constants/index'
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -45,7 +46,7 @@ const CollectionCompleted = props => {
         return (
           <BoxImage key={idx}>
             <div>
-              <img src={process.env.REACT_APP_BOOK_IMAGE + Img} alt="books" />
+              <img src={Constants.PATH_IMAGE + Img} alt="books" />
             </div>
             <NameBox>{Name}</NameBox>
             <AuthorBox>{Author}</AuthorBox>

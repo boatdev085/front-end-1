@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Constants from '../../../constants/index'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -93,7 +94,7 @@ const CollectionTop = props => {
           return (
             <CollectionTopHead key={idx}>
               <BoxImageHead>
-                <img src={process.env.REACT_APP_BOOK_IMAGE + Img} alt="books" />
+                <img src={Constants.PATH_IMAGE + Img} alt="books" />
               </BoxImageHead>
               <BoxContentHead>
                 <NameBox>{Name}</NameBox>
@@ -117,7 +118,7 @@ const CollectionTop = props => {
           return (
             <BoxImage key={idx}>
               <div>
-                <img src={process.env.REACT_APP_BOOK_IMAGE + Img} alt="books" />
+                <img src={Constants.PATH_IMAGE + Img} alt="books" />
               </div>
               <NameBox>{Name}</NameBox>
               <AuthorBox>{Author}</AuthorBox>

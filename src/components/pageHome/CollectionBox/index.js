@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import axios from 'axios'
 import { mapSortDataCollection } from '../../../utils/index'
 import ContainerCollectionBox from './ContainerCollectionBox'
+import Constants from '../../../constants/index'
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -14,7 +16,7 @@ const CollectionBox = () => {
   const [useData, setData] = useState([])
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API + process.env.REACT_APP_COLLECTION)
+      .get(Constants.HOST + Constants.API.collection)
       .then(res => {
         const { data } = res
         if (data.data || data.data.length > 0) {
